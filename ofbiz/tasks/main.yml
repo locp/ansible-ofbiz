@@ -1,0 +1,5 @@
+---
+# tasks file for ofbiz
+- name: Group for ofbiz user
+  group:
+    name: "{{ ofbiz_group }}"

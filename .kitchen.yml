@@ -10,13 +10,13 @@ platforms:
       hostname: kitchen
 
 provisioner:
+  additional_copy_path:
+    "ofbiz"
   ansible_inventory: inventories/kitchen
   ansible_verbose: false
   hosts: all
   idempotency_test: true
   name: ansible_playbook
-  # provision_command:
-  #   - apt-get install dnsutils
   require_ansible_repo: true
   require_chef_for_busser: false
   require_chef_omnibus: false
@@ -29,6 +29,6 @@ suites:
   - name: test_kitchen
     verifier:
       patterns:
-        - roles/test_kitchen/spec/*_spec.rb
+        - spec/*_spec.rb
     provisioner:
-      playbook: site.yml
+      playbook: test.yml

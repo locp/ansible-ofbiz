@@ -1,0 +1,4 @@
+---
+# defaults file for ofbiz
+ofbiz_group: ofbiz
+ofbiz_user: ofbiz
