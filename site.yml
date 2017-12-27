@@ -1,0 +1,5 @@
+---
+- name: Test playbook for the ofbiz role.
+  hosts: all
+  roles:
+    - ofbiz
