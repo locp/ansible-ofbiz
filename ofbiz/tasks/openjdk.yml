@@ -1,0 +1,13 @@
+---
+- name: Add an apt key by id from a keyserver
+  apt_key:
+    id: 86F44E2A
+    keyserver: keyserver.ubuntu.com
+
+- name: Configure Apt Repository
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main
+
+- name: OpenJDK package
+  package:
+    name: "{{ ofbiz_openjdk_package }}"
