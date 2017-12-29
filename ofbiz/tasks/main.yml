@@ -3,3 +3,10 @@
 - name: Group for ofbiz user
   group:
     name: "{{ ofbiz_group }}"
+
+- name: ofbiz user
+  user:
+    comment: Apache OFBiz
+    group: "{{ ofbiz_group }}"
+    home: "{{ ofbiz_user_home_directory }}"
+    name: "{{ ofbiz_user }}"
