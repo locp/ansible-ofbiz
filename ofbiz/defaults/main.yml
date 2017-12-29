@@ -1,5 +1,7 @@
 ---
 # defaults file for ofbiz
 ofbiz_group: ofbiz
+ofbiz_install_openjdk: false
+ofbiz_openjdk_package: 'openjdk-8-jdk-headless'
 ofbiz_user: ofbiz
 ofbiz_user_home_directory: /opt/ofbiz

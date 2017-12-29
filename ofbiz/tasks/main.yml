@@ -10,3 +10,7 @@
     group: "{{ ofbiz_group }}"
     home: "{{ ofbiz_user_home_directory }}"
     name: "{{ ofbiz_user }}"
+
+- name: Import OpenJDK tasks
+  import_tasks: openjdk.yml
+  when: ofbiz_install_openjdk
