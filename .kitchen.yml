@@ -1,0 +1,34 @@
+---
+# .kitchen.yml:  Test Kitchen configuration file.
+driver:
+  name: docker
+  use_sudo: false
+
+platforms:
+  - name: ubuntu-14.04
+    driver_config:
+      hostname: kitchen
+
+provisioner:
+  additional_copy_path:
+    "ofbiz"
+  ansible_inventory: inventories/kitchen
+  ansible_verbose: false
+  hosts: all
+  idempotency_test: true
+  name: ansible_playbook
+  require_ansible_repo: true
+  require_chef_for_busser: false
+  require_chef_omnibus: false
+
+verifier:
+  name: serverspec
+  sudo_path: true
+
+suites:
+  - name: test_kitchen
+    verifier:
+      patterns:
+        - spec/*_spec.rb
+    provisioner:
+      playbook: test.yml

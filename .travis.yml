@@ -1,0 +1,30 @@
+---
+language: python
+python: "2.7"
+
+sudo: true
+
+# Install ansible
+addons:
+  apt:
+    packages:
+    - python-pip
+    - ruby-bundler
+
+install:
+  - bundle install
+  - pip install --cache-dir $HOME/.cache/pip -r requirements.txt
+
+  # Check versions
+  - ansible --version
+  - ansible-lint --version
+  - rubocop --version
+
+script:
+  - rubocop -ES
+  - ansible-playbook test.yml -i inventories/kitchen --syntax-check
+  - ansible-lint -pv test.yml
+  - kitchen test
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

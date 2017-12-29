@@ -1,0 +1,5 @@
+---
+# defaults file for ofbiz
+ofbiz_group: ofbiz
+ofbiz_user: ofbiz
+ofbiz_user_home_directory: /opt/ofbiz
