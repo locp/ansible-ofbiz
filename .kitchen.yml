@@ -8,19 +8,22 @@ platforms:
   - name: ubuntu-14.04
     driver_config:
       hostname: kitchen
+      provision_command:
+        - apt-get install unzip
 
 provisioner:
   additional_copy_path:
     "ofbiz"
-  ansible_inventory: inventories/kitchen
+  ansible_inventory: test/inventory
   ansible_verbose: false
-  ansible_version: 2.4.2.0-1ppa~trusty
+  ansible_version: 2.4.2.0
   hosts: all
   idempotency_test: true
   name: ansible_playbook
   require_ansible_repo: true
   require_chef_for_busser: false
   require_chef_omnibus: false
+  require_pip: true
 
 verifier:
   name: serverspec
