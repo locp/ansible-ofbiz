@@ -1,2 +1,3 @@
 ---
 # vars file for ofbiz
+ofbiz_apache_download_path: 'https://www.apache.org/dyn/closer.lua/ofbiz'

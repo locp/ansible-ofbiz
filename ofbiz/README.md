@@ -6,7 +6,10 @@ A brief description of the role goes here.
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This module accesses the Apache Web servers which make use of SSL SNI.
+Therefore you will need a version of Python
+[capable](http://docs.python-requests.org/en/latest/community/faq/#what-are-hostname-doesn-t-match-errors)
+of handling this.
 
 Role Variables
 --------------
