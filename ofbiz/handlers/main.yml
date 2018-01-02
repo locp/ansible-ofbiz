@@ -1,2 +1,11 @@
 ---
 # handlers file for ofbiz
+- name: ca certificates postinstall
+  command: /var/lib/dpkg/info/ca-certificates-java.postinst configure
+
+- name: create admin user
+  command: "./gradlew loadAdminUserLogin -PuserLoginId={{ ofbiz_admin_user }}"
+  become: yes
+  become_user: "{{ ofbiz_user }}"
+  args:
+    chdir: "{{ ofbiz_user_home_directory }}/apache-ofbiz-{{ ofbiz_version }}"

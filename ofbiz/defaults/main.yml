@@ -1,9 +1,10 @@
 ---
 # defaults file for ofbiz
+ofbiz_admin_user: admin
 ofbiz_download_path: "{{ ofbiz_apache_download_path }}"
 ofbiz_group: ofbiz
 ofbiz_install_openjdk: false
 ofbiz_openjdk_package: 'openjdk-8-jdk-headless'
 ofbiz_user: ofbiz
-ofbiz_user_home_directory: /opt/ofbiz
+ofbiz_user_home_directory: /home/ofbiz
 ofbiz_version: 16.11.03
