@@ -15,7 +15,8 @@ provisioner:
   additional_copy_path:
     "ofbiz"
   ansible_inventory: test/inventory
-  ansible_verbose: false
+  ansible_verbose: true
+  # ansible_verbosity: 3
   ansible_version: 2.4.2.0
   hosts: all
   idempotency_test: true
@@ -24,6 +25,7 @@ provisioner:
   require_chef_for_busser: false
   require_chef_omnibus: false
   require_pip: true
+  roles_path: .
 
 verifier:
   name: serverspec
