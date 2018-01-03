@@ -1,5 +1,6 @@
 ---
 # defaults file for ofbiz
+ofbiz_admin_user: admin
 ofbiz_download_path: "{{ ofbiz_apache_download_path }}"
 ofbiz_group: ofbiz
 ofbiz_install_openjdk: false
